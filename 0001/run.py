@@ -1,13 +1,13 @@
 import random
 import threading
+import time
+
 
 philosophs = {1: False, 2: False, 3: False, 4: False, 5: False}
 warehouse = [1, 2, 3, 4, 5]
 
 
 warehouse_lock = threading.Lock()
-
-overflow_condition = threading.Condition()
 
 
 def is_underflow():
@@ -23,12 +23,14 @@ def philosopher(philosoph):
             print('Thread is phil {} take a forks is {}'.format(philosoph, x))
             warehouse_lock.release()
             threading.Condition()
+            time.sleep(1)
         else:
             philosophs[philosoph] = False
             warehouse.append(random.randint(1, 5)), warehouse.append(random.randint(1, 5))
             warehouse_lock.release()
             print("Underflow. phil {} waiting".format(philosoph))
             threading.Condition()
+            time.sleep(1)
 
 
 for philosoph in philosophs:

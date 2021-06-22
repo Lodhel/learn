@@ -7,7 +7,7 @@ warehouse = []
 max_elements = 10
 
 
-def is_overflow() -> True:
+def is_overflow() -> bool:
     return len(warehouse) >= max_elements
 
 

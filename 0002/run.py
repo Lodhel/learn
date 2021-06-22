@@ -11,7 +11,7 @@ def is_overflow() -> bool:
     return len(warehouse) >= max_elements
 
 
-def is_underflow() -> int:
+def is_underflow() -> bool:
     return len(warehouse) == 0
 
 

@@ -1,23 +1,23 @@
 from rest_framework import serializers
-from . import models
+from .models import Brand, Item, Order
 
 
 class BrandSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Brand
+        model = Brand
 
         fields = '__all__'
 
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Item
+        model = Item
 
         fields = '__all__'
 
 
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Order
+        model = Order
 
         fields = '__all__'
